@@ -45,8 +45,10 @@ cityInput.addEventListener('keypress', (e) => {
 
 // clear history button
 clearHistoryBtn.addEventListener('click', () => {
-    clearHistory();
-    loadHistory(historyList);
+    if (confirm('Are you sure you want to clear all history?')) {
+        clearHistory();
+        loadHistory(historyList);
+    }
 });
 
 // show weather info on the page
