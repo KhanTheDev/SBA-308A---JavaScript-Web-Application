@@ -1,11 +1,11 @@
 // weather module - handles API calls to get weather data
 
 // function to get weather from API
-export async function getWeather(city) {
+export async function getWeather(city, units = 'metric') {
     try {
         // using openweathermap API (free)
         const apiKey = '1234567890abcdef'; // this is fake, need real key
-        const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+        const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
         
         const response = await fetch(url);
         
@@ -28,7 +28,7 @@ export async function getWeather(city) {
             description: data.weather[0].description,
             humidity: data.main.humidity,
             feelsLike: Math.round(data.main.feels_like),
-            windSpeed: Math.round(data.wind.speed * 3.6), // convert m/s to km/h
+            windSpeed: units === 'metric' ? Math.round(data.wind.speed * 3.6) : Math.round(data.wind.speed), // convert m/s to km/h for metric
             pressure: data.main.pressure
         };
         

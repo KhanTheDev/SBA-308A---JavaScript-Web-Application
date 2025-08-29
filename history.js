@@ -37,3 +37,8 @@ export function loadHistory(historyList) {
         historyList.appendChild(li);
     });
 }
+
+// clear all history
+export function clearHistory() {
+    localStorage.removeItem('weatherHistory');
+}

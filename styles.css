@@ -25,6 +25,22 @@ h1 {
     margin: 20px 0;
 }
 
+.unit-toggle {
+    text-align: center;
+    margin: 15px 0;
+}
+
+.unit-toggle label {
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.unit-toggle select {
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
 input {
     padding: 10px;
     width: 200px;
@@ -49,6 +65,15 @@ button:hover {
 button:disabled {
     background-color: #cccccc;
     cursor: not-allowed;
+}
+
+.clear-btn {
+    background-color: #f44336;
+    margin-top: 10px;
+}
+
+.clear-btn:hover {
+    background-color: #da190b;
 }
 
 .weather-info {
