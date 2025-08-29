@@ -10,7 +10,13 @@ export async function getWeather(city) {
         const response = await fetch(url);
         
         if (!response.ok) {
-            throw new Error('City not found');
+            if (response.status === 404) {
+                throw new Error('City not found. Check the spelling.');
+            } else if (response.status === 401) {
+                throw new Error('API key is invalid. Please check the key.');
+            } else {
+                throw new Error('Failed to get weather data. Try again later.');
+            }
         }
         
         const data = await response.json();
@@ -20,7 +26,10 @@ export async function getWeather(city) {
             city: data.name,
             temp: Math.round(data.main.temp),
             description: data.weather[0].description,
-            humidity: data.main.humidity
+            humidity: data.main.humidity,
+            feelsLike: Math.round(data.main.feels_like),
+            windSpeed: Math.round(data.wind.speed * 3.6), // convert m/s to km/h
+            pressure: data.main.pressure
         };
         
     } catch (error) {
