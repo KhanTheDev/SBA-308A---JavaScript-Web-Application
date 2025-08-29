@@ -4,8 +4,7 @@
 export async function getWeather(city, units = 'metric') {
     try {
         // using openweathermap API (free)
-        // TODO: Replace this with your real API key from OpenWeatherMap
-        const apiKey = 'YOUR_API_KEY_HERE'; // Get free key from: https://openweathermap.org/api
+        const apiKey = '3f8730f9c66059bab7d5342e04ef945f';
         const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
         
         const response = await fetch(url);
