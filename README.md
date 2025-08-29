@@ -2,15 +2,6 @@
 
 This is a simple weather app I made for my JavaScript class. It lets you check the weather in different cities.
 
-## ⚠️ IMPORTANT: API Setup Required
-**You need to get a free API key to make this app work!**
-
-1. Go to [OpenWeatherMap API](https://openweathermap.org/api)
-2. Click "Sign Up" and create a free account
-3. After signing in, go to "My API Keys" in your account
-4. Copy your API key
-5. Open `weather.js` and replace `YOUR_API_KEY_HERE` with your real key
-
 ## What it does:
 - Search for weather by city name
 - Shows temperature, weather description, humidity, wind speed, and pressure
@@ -20,13 +11,12 @@ This is a simple weather app I made for my JavaScript class. It lets you check t
 - Clear search history with confirmation
 
 ## How to use:
-1. **First, get your API key** (see steps above)
-2. Type a city name in the search box
-3. Choose your preferred temperature unit (Celsius or Fahrenheit)
-4. Click "Search" or press Enter
-5. See the weather info appear below
-6. Your searches are saved in the history section
-7. Click on any city in history to search it again
+1. Type a city name in the search box
+2. Choose your preferred temperature unit (Celsius or Fahrenheit)
+3. Click "Search" or press Enter
+4. See the weather info appear below
+5. Your searches are saved in the history section
+6. Click on any city in history to search it again
 
 ## Features:
 - **Search**: Enter any city name to get current weather
